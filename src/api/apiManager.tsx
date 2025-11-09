@@ -9,7 +9,7 @@ export const PlaceHolderApiManager = axios.create({
 });
 
 export const MyJsonApiManager = axios.create({
-  baseURL: 'https://my-json-server.typicode.com/oj0rel/Galeria_de_Fotos',
+  baseURL: 'https://my-json-server.typicode.com/oj0rel/fotosapi',
   responseType: 'json',
   headers: {
     'Content-Type': 'application/json',
