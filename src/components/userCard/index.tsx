@@ -5,7 +5,7 @@ type UserCardProps = {
   name: string;
   username: string;
   email: string;
-  onPress?: () => void;
+  onPress: () => void;
   isSelected?: boolean;
 }
 
