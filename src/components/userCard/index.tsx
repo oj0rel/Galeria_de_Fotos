@@ -18,15 +18,15 @@ export const UserCard = ({ name, username, email, onPress, isSelected = false }:
 
         <View style={styles.icon}>
           <Image
-            source={require('../../assets/userIcon.png')}
+            source={require('../../assets/images/userIcon.png')}
             style={styles.image}
           />
         </View>
 
         <View style={styles.pressText}>
-          <Text style={styles.text}>{name}</Text>
-          <Text style={styles.text}>{username}</Text>
-          <Text style={styles.text}>{email}</Text>
+          <Text style={styles.textH1}>{name}</Text>
+          <Text style={styles.textH2}>{username}</Text>
+          <Text style={styles.textH3}>{email}</Text>
         </View>
 
     </Pressable>

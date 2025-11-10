@@ -31,8 +31,8 @@ export const styles = StyleSheet.create({
     marginBottom: 15,
   },
   modalTitle: {
+    fontFamily: 'GeistMono-SemiBold',
     fontSize: 16,
-    fontWeight: "bold",
     textAlign: "center",
     marginBottom: 20,
     color: '#fff'
@@ -46,6 +46,19 @@ export const styles = StyleSheet.create({
   },
   closeButtonText: {
     color: '#000000',
-    fontWeight: "bold",
+    fontFamily: 'GeistMono-SemiBold',
+  },
+  containerError: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: '#3E3939',
+  },
+  textError: {
+    color: '#D8000C',
+    textAlign: "center",
+    fontFamily: 'GeistMono-SemiBold',
+    fontSize: 16,
+    fontWeight: "400",
   },
 })

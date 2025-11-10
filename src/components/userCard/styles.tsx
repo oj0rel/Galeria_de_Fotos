@@ -16,8 +16,20 @@ export const styles = StyleSheet.create({
     height: 100,
     borderRadius: 50,
   },
-  text: {
+  textH1: {
     color: '#fff',
+    fontFamily: 'GeistMono-SemiBold',
+    fontSize: 16,
+  },
+  textH2: {
+    color: '#fff',
+    fontFamily: 'GeistMono-SemiBold',
+    fontSize: 13,
+  },
+  textH3: {
+    color: '#fff',
+    fontFamily: 'GeistMono-SemiBold',
+    fontSize: 10,
   },
   image: {
     width: 30,

@@ -6,8 +6,16 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
     paddingTop: 40,
   },
-  text: {
+  textH1: {
     color: '#fff',
     marginBottom: 6,
+    fontFamily: 'GeistMono-SemiBold',
+    fontSize: 18,
+  },
+  textH2: {
+    color: '#fff',
+    marginBottom: 6,
+    fontFamily: 'GeistMono-SemiBold',
+    fontSize: 14,
   },
 })

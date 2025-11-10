@@ -12,4 +12,17 @@ export const styles = StyleSheet.create({
     width: "100%",
     alignSelf: "center",
   },
+  containerError: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: '#3E3939',
+  },
+  textError: {
+    color: '#D8000C',
+    textAlign: "center",
+    fontFamily: 'GeistMono-SemiBold',
+    fontSize: 18,
+    fontWeight: "400",
+  },
 })

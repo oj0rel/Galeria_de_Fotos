@@ -12,20 +12,18 @@ export const styles = StyleSheet.create({
     width: "100%",
     alignSelf: "center",
   },
-  errorContainer: {
-    width: '100%',
-    backgroundColor: '#FFDEDE',
-    padding: 10,
-    borderRadius: 8,
-    marginBottom: 16,
-    borderWidth: 1,
-    borderColor: '#D8000C',
+  containerError: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: '#3E3939',
   },
-  errorText: {
+  textError: {
     color: '#D8000C',
-    fontSize: 14,
-    fontWeight: "500",
     textAlign: "center",
+    fontFamily: 'GeistMono-SemiBold',
+    fontSize: 18,
+    fontWeight: "400",
   },
   footer: {
     padding: 16,
@@ -45,7 +43,7 @@ export const styles = StyleSheet.create({
   entrarButtonText: {
     color: '#fff',
     fontSize: 16,
-    fontWeight: "bold",
+    fontFamily: 'GeistMono-SemiBold',
   },
   filtroContainer: {
     paddingHorizontal: 16,
@@ -56,6 +54,7 @@ export const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF',
     borderRadius: 8,
     padding: 12,
+    fontFamily: 'GeistMono-SemiBold',
     fontSize: 16,
     color: '#000',
   },

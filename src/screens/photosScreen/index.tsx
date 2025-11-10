@@ -11,11 +11,11 @@ import { styles } from "./styles";
 export default function PhotosScreen() {
   const [photos, setPhotos] = useState<PhotoResponse[]>([]);
 
-  const [selectedPhoto, setSelectedPhoto] = useState<PhotoResponse | null>(null);
+  const [selectedPhoto, setSelectedPhoto] = useState<PhotoResponse | null>(
+    null
+  );
 
   const [error, setError] = useState<string | null>(null);
-
-  const [selectedPhotoId, setSelectedPhotoId] = useState<number | null>(null);
 
   const router = useRouter();
 
@@ -44,21 +44,16 @@ export default function PhotosScreen() {
     carregarFotos();
   }, [albumId]);
 
-  const handleEntrar = (photoId: number) => {
-    setSelectedPhotoId(photoId);
-  };
-
   if (error) {
     return (
-      <SafeAreaView style={styles.container}>
-        <Text style={{ color: "red", textAlign: "center" }}>{error}</Text>
+      <SafeAreaView style={styles.containerError}>
+        <Text style={styles.textError}>{error}</Text>
       </SafeAreaView>
     );
   }
 
   return (
     <SafeAreaView style={styles.container}>
-
       <View>
         <HeaderComponent
           title="FOTOS"
@@ -100,12 +95,9 @@ export default function PhotosScreen() {
             >
               <Text style={styles.closeButtonText}>Fechar</Text>
             </Pressable>
-
           </View>
         </View>
-
       </Modal>
-
     </SafeAreaView>
   );
 }

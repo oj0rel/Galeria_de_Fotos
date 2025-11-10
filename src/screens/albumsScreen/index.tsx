@@ -10,7 +10,7 @@ import { styles } from "./styles";
 
 export default function AlbumsScreen() {
   const [albums, setAlbums] = useState<AlbumResponse[]>([]);
-  
+
   const [error, setError] = useState<string | null>(null);
 
   const [selectedAlbumId, setSelectedAlbumId] = useState<number | null>(null);
@@ -20,7 +20,6 @@ export default function AlbumsScreen() {
   const { userId } = useLocalSearchParams();
 
   const carregarAlbums = async () => {
-    
     setError(null);
 
     if (!userId) {
@@ -33,7 +32,7 @@ export default function AlbumsScreen() {
 
       const data = await AlbumsList(idNumerico);
       setAlbums(data);
-    } catch(error) {
+    } catch (error) {
       console.error("Erro ao carregar álbuns: ", error);
       setError("Falha ao carregar álbuns.");
     }
@@ -47,24 +46,21 @@ export default function AlbumsScreen() {
     setSelectedAlbumId(albumId);
 
     router.push({
-      pathname: '/photos',
-      params: { albumId: selectedAlbumId }
+      pathname: "/photos",
+      params: { albumId: selectedAlbumId },
     });
-  }
+  };
 
   if (error) {
     return (
-      <SafeAreaView style={styles.container}>
-        <Text style={{ color: 'red', textAlign: 'center' }}>{error}</Text>
+      <SafeAreaView style={styles.containerError}>
+        <Text style={styles.textError}>{error}</Text>
       </SafeAreaView>
     );
   }
 
-
-
   return (
     <SafeAreaView style={styles.container}>
-      
       <View>
         <HeaderComponent
           title="ÁLBUMS"
@@ -79,13 +75,11 @@ export default function AlbumsScreen() {
         renderItem={({ item }) => (
           <AlbumCard
             title={item.title}
-
             onPress={() => handleEntrar(item.id)}
             isSelected={item.id === selectedAlbumId}
           />
         )}
       />
-      
     </SafeAreaView>
   );
 }
