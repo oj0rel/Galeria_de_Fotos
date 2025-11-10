@@ -5,6 +5,7 @@ import { AlbumResponse } from "@/src/types/albumType";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { useEffect, useState } from "react";
 import { FlatList, Text, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import { styles } from "./styles";
 
 export default function AlbumsScreen() {
@@ -53,16 +54,16 @@ export default function AlbumsScreen() {
 
   if (error) {
     return (
-      <View style={styles.container}>
+      <SafeAreaView style={styles.container}>
         <Text style={{ color: 'red', textAlign: 'center' }}>{error}</Text>
-      </View>
+      </SafeAreaView>
     );
   }
 
 
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       
       <View>
         <HeaderComponent
@@ -85,6 +86,6 @@ export default function AlbumsScreen() {
         )}
       />
       
-    </View>
+    </SafeAreaView>
   );
 }

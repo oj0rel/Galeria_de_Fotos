@@ -5,6 +5,7 @@ import { PhotoResponse } from "@/src/types/photoType";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { useEffect, useState } from "react";
 import { FlatList, Image, Modal, Pressable, Text, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import { styles } from "./styles";
 
 export default function PhotosScreen() {
@@ -49,14 +50,14 @@ export default function PhotosScreen() {
 
   if (error) {
     return (
-      <View style={styles.container}>
+      <SafeAreaView style={styles.container}>
         <Text style={{ color: "red", textAlign: "center" }}>{error}</Text>
-      </View>
+      </SafeAreaView>
     );
   }
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
 
       <View>
         <HeaderComponent
@@ -105,6 +106,6 @@ export default function PhotosScreen() {
 
       </Modal>
 
-    </View>
+    </SafeAreaView>
   );
 }

@@ -5,6 +5,7 @@ import { UserResponse } from "@/src/types/userType";
 import { useRouter } from "expo-router";
 import { useEffect, useState } from "react";
 import { FlatList, Pressable, Text, TextInput, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import { styles } from "./styles";
 
 export default function UsersScreen() {
@@ -75,14 +76,14 @@ export default function UsersScreen() {
 
   if (error) {
     return (
-      <View style={styles.container}>
+      <SafeAreaView style={styles.container}>
         <Text style={{ color: "red" }}>{error}</Text>
-      </View>
+      </SafeAreaView>
     );
   }
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
           <View>
             <HeaderComponent
               title="USUÁRIOS CADASTRADOS"
@@ -135,6 +136,6 @@ export default function UsersScreen() {
           <Text style={styles.entrarButtonText}>Entrar</Text>
         </Pressable>
       </View>
-    </View>
+    </SafeAreaView>
   )
 }
