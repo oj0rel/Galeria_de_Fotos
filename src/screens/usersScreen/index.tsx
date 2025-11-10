@@ -4,7 +4,7 @@ import { UserCard } from "@/src/components/userCard";
 import { UserResponse } from "@/src/types/userType";
 import { useRouter } from "expo-router";
 import { useEffect, useState } from "react";
-import { FlatList, Pressable, Text, View } from "react-native";
+import { FlatList, Pressable, Text, TextInput, View } from "react-native";
 import { styles } from "./styles";
 
 export default function UsersScreen() {
@@ -12,6 +12,9 @@ export default function UsersScreen() {
 
   const [error, setError] = useState<string | null>(null);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
+  const [filtroNome, setFiltroNome] = useState<string>('');
+  const [filteredUsers, setFilteredUsers] = useState<UserResponse[]>([]);
 
   const [selectedUserId, setSelectedUserId] = useState<number | null>(null);
 
@@ -32,7 +35,18 @@ export default function UsersScreen() {
 
   useEffect(() => {
     carregarUsuarios();
-  }, [carregarUsuarios]);
+  }, []);
+
+  useEffect(() => {
+    if (filtroNome === '') {
+      setFilteredUsers(users);
+    } else {
+      const dataFiltrada = users.filter((user) =>
+      user.name.toLowerCase().includes(filtroNome.toLowerCase())
+    );
+    setFilteredUsers(dataFiltrada);
+    }
+  }, [filtroNome, users]);
 
   const validateUser = () => {
     if (!selectedUserId) {
@@ -76,6 +90,16 @@ export default function UsersScreen() {
             />
           </View>
 
+          <View style={styles.filtroContainer}>
+            <TextInput
+              style={styles.filtroInput}
+              placeholder="Filtrar por nome..."
+              placeholderTextColor="#888"
+              value={filtroNome}
+              onChangeText={setFiltroNome}
+            />
+          </View>
+
           {errorMessage && (
               <View style={styles.errorContainer}>
                 <Text style={styles.errorText}>{errorMessage}</Text>
@@ -84,7 +108,7 @@ export default function UsersScreen() {
 
             <FlatList
               style={styles.flatList}
-              data={users}
+              data={filteredUsers}
               keyExtractor={(item) => item.id.toString()}
               renderItem={({ item }) => (
                 <UserCard

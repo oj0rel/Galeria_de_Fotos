@@ -24,8 +24,8 @@ export const styles = StyleSheet.create({
   errorText: {
     color: '#D8000C',
     fontSize: 14,
-    fontWeight: '500',
-    textAlign: 'center',
+    fontWeight: "500",
+    textAlign: "center",
   },
   footer: {
     padding: 16,
@@ -35,7 +35,7 @@ export const styles = StyleSheet.create({
     backgroundColor: '#76AB3E',
     padding: 16,
     borderRadius: 12,
-    alignItems: 'center',
+    alignItems: "center",
     width: "80%",
     marginBottom: 40
   },
@@ -45,6 +45,18 @@ export const styles = StyleSheet.create({
   entrarButtonText: {
     color: '#fff',
     fontSize: 16,
-    fontWeight: 'bold',
+    fontWeight: "bold",
+  },
+  filtroContainer: {
+    paddingHorizontal: 16,
+    paddingTop: 8,
+    paddingBottom: 16,
+  },
+  filtroInput: {
+    backgroundColor: '#FFFFFF',
+    borderRadius: 8,
+    padding: 12,
+    fontSize: 16,
+    color: '#000',
   },
 })
