@@ -2,7 +2,9 @@
 
 Bem-vindo ao repositório do projeto **Galeria de Fotos**. Este é um aplicativo móvel desenvolvido para simular uma galeria interativa, consumindo dados reais de uma API pública.
 
-![Demonstração da Galeria](assets/galeria.gif)
+<div align="center">
+  <img src="assets/galeria.gif" width="300" alt="Demonstração da Galeria">
+</div>
 
 ## 🎯 O que o projeto resolve?
 
