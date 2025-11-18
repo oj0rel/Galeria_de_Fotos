@@ -1,50 +1,63 @@
-# Welcome to your Expo app 👋
+# 📸 Galeria de Fotos - Mobile App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Bem-vindo ao repositório do projeto **Galeria de Fotos**. Este é um aplicativo móvel desenvolvido para simular uma galeria interativa, consumindo dados reais de uma API pública.
 
-## Get started
+## 🎯 O que o projeto resolve?
 
-1. Install dependencies
+Este aplicativo soluciona o desafio de **visualização e organização de dados externos** em interfaces móveis.
+O objetivo principal foi criar uma interface amigável onde o usuário pode navegar entre **Usuários**, seus respectivos **Álbuns** e visualizar as **Fotos** contidas neles.
+
+Ele transforma dados brutos (JSON) da API *JSONPlaceholder* em uma experiência visual fluida, permitindo:
+- Listagem de usuários.
+- Barra de pesquisa de nomes de usuários.
+- Navegação hierárquica (Usuário -> Álbuns -> Fotos).
+- Visualização detalhada das imagens.
+- Tratamento de dados assíncronos.
+
+## 🛠️ Tecnologias Utilizadas
+
+O projeto foi construído utilizando um ecossistema moderno e tipado para garantir escalabilidade e manutenção:
+
+- **React Native:** Framework principal para desenvolvimento mobile híbrido.
+- **TypeScript:** Utilizado para garantir a segurança de tipos (interfaces para `User`, `Album`, `Photo`), evitando erros em tempo de execução e melhorando o intellisense.
+- **API Integration (Fetch/Axios):** Implementação de uma camada de serviço dedicada (`src/api`) para comunicação com o *JSONPlaceholder*.
+- **Expo Router:** Para o gerenciamento de rotas e navegação entre telas.
+- **Componentização:** Estrutura modular de componentes reutilizáveis.
+
+## 🚀 Aprendizados e Destaques
+
+O desenvolvimento deste projeto proporcionou o aprofundamento em conceitos chave de desenvolvimento mobile e arquitetura de software:
+
+1.  **Arquitetura Limpa e Organizada:**
+    - Separação clara de responsabilidades. O projeto foi dividido em camadas:
+        - `src/api`: Lógica de requisição de dados.
+        - `src/types`: Definições de tipagem (TypeScript) para garantir a integridade dos dados.
+        - `src/screens`: Interface do usuário.
+
+2.  **Consumo de API REST:**
+    - Prática de métodos HTTP (GET) e tratamento de respostas assíncronas.
+    - Mapeamento de dados JSON para objetos TypeScript.
+
+3.  **Performance e UX:**
+    - Renderização eficiente de listas (FlatList).
+    - Feedback visual durante o carregamento de dados.
+
+---
+
+### 🔧 Como rodar o projeto
+
+1. Clone o repositório:
+   ```bash
+   git clone [https://github.com/oj0rel/Galeria_de_Fotos.git](https://github.com/oj0rel/Galeria_de_Fotos.git)
+
+2. Instale as dependências
 
    ```bash
    npm install
    ```
 
-2. Start the app
+3. Inicie o app
 
    ```bash
    npx expo start
    ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
